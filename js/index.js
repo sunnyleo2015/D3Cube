@@ -154,6 +154,9 @@ function initDatGUI(){
 
 function doRender(){
     stats.update();
+    trackBallControls.update(delta);
+    //camera.lookAt({x:1000,y:1000,z:0});
+
     if(!controls.stopRender){
         $('#label-position-list').html('');
         $.each(labelList,(index)=>{
@@ -161,20 +164,20 @@ function doRender(){
 
             $('#label-position-list').append(
                 `<li class=" ${labelList[index].name}">
-                <span class="name">${labelList[index].name}</span>
-                <span class="position">x: ${labelList[index].position.x}</span>
-                <span class="position">y: ${labelList[index].position.y}</span>
-                <span class="position">z: ${labelList[index].position.z}</span>
-            </li>`
+                    <span class="name">${labelList[index].name}</span>
+                    <span class="position">x: ${labelList[index].position.x}</span>
+                    <span class="position">y: ${labelList[index].position.y}</span>
+                    <span class="position">z: ${labelList[index].position.z}</span>
+                </li>`
             )
+
+            $(`.${labelList[index].name}`).on('click',()=>{
+                trackBallControls.target.set(labelList[index].position.x,labelList[index].position.y,labelList[index].position.z)
+            })
         });
     }
 
-    if (camera instanceof THREE.Camera) {
-        camera.lookAt(new THREE.Vector3(controls.cameraLookAtX, controls.cameraLookAtY, controls.cameraLookAtZ));
-        lookAtMesh.position.copy(new THREE.Vector3(controls.cameraLookAtX, controls.cameraLookAtY, controls.cameraLookAtZ));
-    }
-    trackBallControls.update(delta);
+
     requestAnimationFrame(doRender);
 
     renderer.render(scene, camera);
@@ -189,7 +192,6 @@ function threeStart(){
     initTrackBallControls();
     initDatGUI();
     initStats();
-    //initSphereLabel();
     initCameraLookAtMash();
     doRender();
 }
