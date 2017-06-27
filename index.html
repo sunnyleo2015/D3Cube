@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/index.css" rel="stylesheet" media="screen">
+    <title>3dCube</title>
+</head>
+<body>
+<!--<canvas id="3dCube"></canvas>-->
+<!--<canvas id="3dFrame"></canvas>-->
+<div id="WebGL"></div>
+<div id="Stats-output"></div>
+<ul id="label-position-list">
+    <li>
+        <span class="name">name</span>
+        <span class="position">x: 100000</span>
+        <span class="position">y: 100000</span>
+        <span class="position">z: 100000</span>
+    </li>
+    <li>
+        <span class="name">name</span>
+        <span class="position">x: 100</span>
+        <span class="position">y: 1000</span>
+        <span class="position">z: 100000</span>
+    </li>
+</ul>
+<script>window.nodeRequire = require;
+delete window.require;
+delete window.exports;
+delete window.module;</script>
+<script src="lib/jQuery/jQuery-2.2.0.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/three.js/r83/three.min.js"></script>
+<script src="https://cdn.bootcss.com/stats.js/r17/Stats.min.js"></script>
+<script src="https://cdn.bootcss.com/dat-gui/0.6.5/dat.gui.min.js"></script>
+<script src="plugins/TrackballControls.js"></script>
+<script src="plugins/dat.gui.js"></script>
+<script src="plugins/stats.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
