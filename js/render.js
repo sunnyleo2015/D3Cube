@@ -181,22 +181,19 @@ function initTrackBallControls(){
 }
 
 function initStats() {
-
     stats = new Stats();
-
     stats.setMode(0);
-
     stats.domElement.style.position = 'absolute';
     stats.domElement.style.left = '0px';
     stats.domElement.style.top = '0px';
-
     document.getElementById("Stats-output").appendChild(stats.domElement);
-
     return stats;
 }
 
 let controls = new function () {
-
+    this.noRotate = false;
+    this.noZoom = false;
+    this.noPan = false;
     this.stopRender = stopRender;
     this.addLabel = function(){
         addSphereLabel();
@@ -204,7 +201,13 @@ let controls = new function () {
 };
 
 function initDatGUI(){
+    let trackBallFolder = gui.addFolder('Trackball Setting');
+    trackBallFolder.add(controls, 'noRotate');
+    trackBallFolder.add(controls, 'noZoom');
+    trackBallFolder.add(controls, 'noPan');
     gui.add(controls, 'addLabel');
+
+
     stopRenderController = gui.add(controls, 'stopRender');
     stopRenderController.onChange(function(value){
         doRender();
@@ -213,6 +216,9 @@ function initDatGUI(){
 
 function doRender(){
     stats.update();
+    trackBallControls.noRotate = controls.noRotate;
+    trackBallControls.noZoom = controls.noZoom;
+    trackBallControls.noPan = controls.noPan;
     trackBallControls.update(delta);
 
     if(!controls.stopRender){
