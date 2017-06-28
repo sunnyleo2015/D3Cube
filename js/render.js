@@ -44,11 +44,11 @@ function initScene() {
 
 function initLight(){
     light = new THREE.DirectionalLight(0xFF0000,1.0,0);
-    light.position.set(100,100,200);
+    light.position.set(2000,2000,2000);
     scene.add(light);
 }
 
-function initFrame(){
+function initFrameEightArea(){
     let material = new THREE.LineBasicMaterial({vertexColors: THREE.VertexColors});
     let frame_geometry = new THREE.Geometry();
     let point_color_1 = new THREE.Color(0x999999);
@@ -95,6 +95,58 @@ function initFrame(){
     scene.add(cross_lineZ);
 }
 
+function initFrame(){
+    let material = new THREE.LineBasicMaterial({vertexColors: THREE.VertexColors});
+    let frame_geometry = new THREE.Geometry();
+    let point_color_1 = new THREE.Color(0x999999);
+    let point_color_2 = new THREE.Color(0xff0000);
+    let point_1 = new THREE.Vector3(-300,0,0);
+    let point_2 = new THREE.Vector3(1500,0,0);
+
+    frame_geometry.vertices.push(point_1);
+    frame_geometry.vertices.push(point_2);
+    frame_geometry.colors.push(point_color_1,point_color_1);
+
+    for (let i=-30;i<150;i++){
+        let line = new THREE.Line(frame_geometry,material,THREE.LineSegments );
+        line.position.y = i*10;
+        scene.add(line);
+
+        line = new THREE.Line(frame_geometry,material,THREE.LineSegments );
+        line.rotation.z = (90 * Math.PI)/180;
+        line.position.x = i*10;
+        scene.add(line)
+    }
+
+
+    let cross_geometryX = new THREE.Geometry();
+
+    cross_geometryX.vertices.push(new THREE.Vector3(-400,0,0));
+    cross_geometryX.vertices.push(new THREE.Vector3(1800,0,0));
+    cross_geometryX.colors.push(point_color_2,point_color_2);
+
+    let cross_lineX =  new THREE.Line(cross_geometryX,material,THREE.LineSegments );
+    cross_lineX.position.y = 0;
+    scene.add(cross_lineX);
+
+    let cross_geometryY = new THREE.Geometry();
+    cross_geometryY.vertices.push(new THREE.Vector3(-400,0,0));
+    cross_geometryY.vertices.push(new THREE.Vector3(1800,0,0));
+    cross_geometryY.colors.push(new THREE.Color(0x0a85f3),new THREE.Color(0x0a85f3));
+
+    let cross_lineY =  new THREE.Line(cross_geometryY,material,THREE.LineSegments );
+    cross_lineY.rotation.z = (90 * Math.PI)/180;
+    cross_lineY.position.x = 0;
+    scene.add(cross_lineY);
+
+    let cross_geometryZ = new THREE.Geometry();
+    cross_geometryZ.vertices.push(new THREE.Vector3(0,0,-300));
+    cross_geometryZ.vertices.push(new THREE.Vector3(0,0,1500));
+    cross_geometryZ.colors.push(new THREE.Color(0xf89406),new THREE.Color(0xf89406));
+    let cross_lineZ =  new THREE.Line(cross_geometryZ,material,THREE.LineSegments );
+    scene.add(cross_lineZ);
+}
+
 function initSphereLabel(){
     let sphereGeometry = new THREE.SphereGeometry(4,10,10);
     let sphereMaterial = new THREE.MeshBasicMaterial({color: 0xff0000, wireframe:true});
@@ -122,6 +174,7 @@ function initCameraLookAtMash(){
 
 function initTrackBallControls(){
     trackBallControls = new THREE.TrackballControls(camera, renderer.domElement);
+    trackBallControls.target.set(0,0,0);
     trackBallControls.rotateSpeed = 1.0;
     trackBallControls.zoomSpeed = 1.0;
     trackBallControls.panSpeed = 1.0;

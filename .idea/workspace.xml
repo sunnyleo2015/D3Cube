@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0514f4f7-66e1-4ef5-a601-7b491c448b8f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/render.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/cube.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/frame.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/js/LabelPositionConrtrol.js" afterPath="$PROJECT_DIR$/js/conrtrolBox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/render.js" afterPath="$PROJECT_DIR$/js/render.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,14 +21,14 @@
     <favorites_list name="d3Cube" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4910432">
+    <splitter split-orientation="horizontal" split-proportion="0.1">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="468">
-                  <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="18" />
+                <state relative-caret-position="52">
+                  <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
@@ -75,24 +70,25 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="conrtrolBox.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="conrtrolBox.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/conrtrolBox.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="286">
-                  <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+                  <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="render.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="render.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/render.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+                <state relative-caret-position="65">
+                  <caret line="124" column="56" lean-forward="false" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="56" />
                   <folding>
                     <element signature="e#0#49#0" expanded="false" />
-                    <marker date="1498631485760" expanded="true" signature="4932:5277" ph="..." />
+                    <element signature="n#!!block;n#initFrameEightArea#0" expanded="false" />
+                    <marker date="1498635641001" expanded="true" signature="7060:7405" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -154,11 +150,11 @@
         <option value="$PROJECT_DIR$/js/examples/example1-2.js" />
         <option value="$PROJECT_DIR$/plugins/TrackballControls.js" />
         <option value="$PROJECT_DIR$/js/LabelPositionConrtrol.js" />
-        <option value="$PROJECT_DIR$/js/render.js" />
         <option value="$PROJECT_DIR$/css/index.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/index.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/conrtrolBox.js" />
+        <option value="$PROJECT_DIR$/js/render.js" />
       </list>
     </option>
   </component>
@@ -363,12 +359,12 @@
       <workItem from="1498013161459" duration="17624000" />
       <workItem from="1498097964572" duration="205000" />
       <workItem from="1498443211594" duration="31047000" />
-      <workItem from="1498551283663" duration="16265000" />
+      <workItem from="1498551283663" duration="18687000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93130000" />
+    <option name="totallyTimeSpent" value="95552000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -731,14 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -747,14 +735,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/render.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-            <marker date="1498631485760" expanded="true" signature="4932:5277" ph="..." />
-          </folding>
+        <state relative-caret-position="52">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -769,8 +754,20 @@
     <entry file="file://$PROJECT_DIR$/js/conrtrolBox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/render.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="124" column="56" lean-forward="false" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+            <element signature="n#!!block;n#initFrameEightArea#0" expanded="false" />
+            <marker date="1498635641001" expanded="true" signature="7060:7405" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
