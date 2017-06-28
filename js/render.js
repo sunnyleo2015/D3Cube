@@ -194,10 +194,16 @@ let controls = new function () {
     this.noRotate = false;
     this.noZoom = false;
     this.noPan = false;
+
     this.stopRender = stopRender;
-    this.addLabel = function(){
+
+    this.AddLabel = function(){
         addSphereLabel();
-    }
+    };
+
+    this.FocusOriginPoint = function(){
+        trackBallControls.target.set(0,0,0)
+    };
 };
 
 function initDatGUI(){
@@ -205,7 +211,8 @@ function initDatGUI(){
     trackBallFolder.add(controls, 'noRotate');
     trackBallFolder.add(controls, 'noZoom');
     trackBallFolder.add(controls, 'noPan');
-    gui.add(controls, 'addLabel');
+    gui.add(controls, 'AddLabel');
+    gui.add(controls, 'FocusOriginPoint');
 
 
     stopRenderController = gui.add(controls, 'stopRender');

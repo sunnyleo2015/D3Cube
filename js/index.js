@@ -1,4 +1,7 @@
-window.onload = threeStart();
+$(()=>{
+    threeStart();
+    $('[data-toggle="popover"]').popover();
+});
 
 $('#reset-camera').on('click', ()=>{
     resetCamera();

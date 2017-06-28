@@ -8,19 +8,79 @@
     <title>3dCube</title>
 </head>
 <body>
+    <!--模型展示区域-->
     <div id="WebGL"></div>
+
+    <!--状态展示-->
     <div id="Stats-output"></div>
+
+    <!--控制区-->
     <div id="controllerBorad" class="clearfix">
         <ul id="label-position-list"></ul>
     </div>
     <div class="button-list">
         <div id="reset-camera" class="btn">reset camera</div>
+        <label>设置观测面</label>
         <div class="row">
             <div id="camera-xy" class="btn col-md-4">xy面</div>
             <div id="camera-yz" class="btn col-md-4">yz面</div>
             <div id="camera-xz" class="btn col-md-4">xz面</div>
         </div>
+        <div id="localizer-info">
+            <label>定位器信息</label>
+            <ul class="localizer-list">
+                <li>
+                    <div class="name">name</div>
+                    <span class="position">x: 1000.00</span>
+                    <span class="position">y: 1000.00</span>
+                    <span class="position">z: 1000.00</span>
+                </li>
+                <li>
+                    <div class="name">name</div>
+                    <span class="position">x: 1000.00</span>
+                    <span class="position">y: 1000.00</span>
+                    <span class="position">z: 1000.00</span>
+                </li>
+                <li>
+                    <div class="name">name</div>
+                    <span class="position">x: 1000.00</span>
+                    <span class="position">y: 1000.00</span>
+                    <span class="position">z: 1000.00</span>
+                </li>
+                <li>
+                    <div class="name">name</div>
+                    <span class="position">x: 1000.00</span>
+                    <span class="position">y: 1000.00</span>
+                    <span class="position">z: 1000.00</span>
+                </li>
+                <li>
+                    <div class="name">name</div>
+                    <span class="position">x: 1000.00</span>
+                    <span class="position">y: 1000.00</span>
+                    <span class="position">z: 1000.00</span>
+                </li>
+            </ul>
+            <button class="btn" type="button" data-toggle="modal" data-target="#localizerModal">设置定位器</button>
+        </div>
 
+    </div>
+    <!--添加定位器坐标-->
+    <div class="modal fade" id="localizerModal" tabindex="-1" role="dialog" aria-labelledby="localizerModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="localizerModalLabel">添加定位器</h4>
+                </div>
+                <div class="modal-body" id="localizer-list">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 <script>window.nodeRequire = require;

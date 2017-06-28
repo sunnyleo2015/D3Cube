@@ -21,6 +21,7 @@
 
 .row {
     margin: 0;
+    margin-bottom: 10px;
 }
 
 body{
@@ -48,21 +49,19 @@ body{
 }
 
 ::-webkit-scrollbar{
-    width: 5px;
+    width: 0;
 }
 
 #controllerBorad{
     display: block;
     width: 100%;
     height: 100vh;
-    position: fixed;
     top: 0;
     left: 0;
-    z-index: -100;
 }
 
 #label-position-list {
-    position: absolute;
+    position: fixed;
     right: 15px;
     bottom: 0;
     background: #000;
@@ -73,6 +72,7 @@ body{
     max-height: 300px;
     overflow: auto;
     cursor: default;
+    z-index: 100;
 }
 
 
@@ -97,20 +97,51 @@ body{
     position: absolute;
     display: block;
     top: 50px;
-    width: 200px;
-    overflow: auto;
+    width: 320px;
     height: calc(100vh - 50px);
     padding: 10px;
     box-sizing: border-box;
+    background-color: #0e0e0e;
+    color: #ffffff;
+}
+
+.button-list label{
+    font-weight: bold;
+    margin: 20px 0 10px 0;
 }
 
 #reset-camera{
     display: block;
-    background: #000;
-    color: #fff;
+    background: #f2f2f2;
+    color: #000;
     text-align: center;
     padding: 5px;
     font-weight: bold;
     width: 100px;
     margin-bottom: 10px;
+}
+
+.localizer-list{
+    width: 300px;
+    max-height: 300px;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    cursor: default;
+    overflow: scroll;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+
+.localizer-list .name {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.localizer-list .position {
+    padding: 5px;
+    color: #fff;
+    margin-bottom: 10px;
+    display: inline-block;
 }
