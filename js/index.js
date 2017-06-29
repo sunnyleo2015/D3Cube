@@ -1,7 +1,20 @@
 $(()=>{
     threeStart();
-    $('[data-toggle="popover"]').popover();
+    $('[data-toggle="popover"]').popover()
 });
+
+function threeStart(){
+    initRenderer();
+    initCamera();
+    initScene();
+    initLight();
+    initFrame();
+    initLocalizesList();
+    initTrackBallControls();
+    initDatGUI();
+    initStats();
+    doRender();
+}
 
 $('#reset-camera').on('click', ()=>{
     resetCamera();

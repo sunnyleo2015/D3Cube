@@ -48,53 +48,6 @@ function initLight(){
     scene.add(light);
 }
 
-function initFrameEightArea(){
-    let material = new THREE.LineBasicMaterial({vertexColors: THREE.VertexColors});
-    let frame_geometry = new THREE.Geometry();
-    let point_color_1 = new THREE.Color(0x999999);
-    let point_color_2 = new THREE.Color(0xff0000);
-    let point_1 = new THREE.Vector3(-1000,0,0);
-    let point_2 = new THREE.Vector3(1000,0,0);
-
-    frame_geometry.vertices.push(point_1);
-    frame_geometry.vertices.push(point_2);
-    frame_geometry.colors.push(point_color_1,point_color_1);
-
-    for (let i=-100;i<100;i++){
-        let line = new THREE.Line(frame_geometry,material,THREE.LineSegments );
-        line.position.y = i*10;
-        scene.add(line);
-
-        line = new THREE.Line(frame_geometry,material,THREE.LineSegments );
-        line.rotation.z = (90 * Math.PI)/180;
-        line.position.x = i*10;
-        scene.add(line)
-    }
-
-
-    let cross_geometry = new THREE.Geometry();
-
-    cross_geometry.vertices.push(point_1);
-    cross_geometry.vertices.push(point_2);
-    cross_geometry.colors.push(point_color_2,point_color_2);
-
-    let cross_lineX =  new THREE.Line(cross_geometry,material,THREE.LineSegments );
-    cross_lineX.position.y = 0;
-    scene.add(cross_lineX);
-
-    let cross_lineY =  new THREE.Line(cross_geometry,material,THREE.LineSegments );
-    cross_lineY.rotation.z = (90 * Math.PI)/180;
-    cross_lineY.position.x = 0;
-    scene.add(cross_lineY);
-
-    let cross_geometryZ = new THREE.Geometry();
-    cross_geometryZ.vertices.push(new THREE.Vector3(0,0,-800));
-    cross_geometryZ.vertices.push(new THREE.Vector3(0,0,800));
-    cross_geometryZ.colors.push(new THREE.Color(0xf89406),new THREE.Color(0xf89406));
-    let cross_lineZ =  new THREE.Line(cross_geometryZ,material,THREE.LineSegments );
-    scene.add(cross_lineZ);
-}
-
 function initFrame(){
     let material = new THREE.LineBasicMaterial({vertexColors: THREE.VertexColors});
     let frame_geometry = new THREE.Geometry();
@@ -149,7 +102,7 @@ function initFrame(){
 
 function initSphereLabel(){
     let sphereGeometry = new THREE.SphereGeometry(4,10,10);
-    let sphereMaterial = new THREE.MeshBasicMaterial({color: 0xff0000, wireframe:true});
+    let sphereMaterial = new THREE.MeshBasicMaterial({color: 0xff0000});
 
     let sphereLabel= new THREE.Mesh(sphereGeometry,sphereMaterial);
 
@@ -164,6 +117,21 @@ function initSphereLabel(){
 
 function addSphereLabel() {
     initSphereLabel();
+}
+
+function initLocalize(localize){
+    let localizeGeometry = new THREE.CubeGeometry(10,10,10);
+    let localizeMaterial = new THREE.MeshLambertMaterial({color: 0xff9600});
+
+    let localizeLabel = new THREE.Mesh(localizeGeometry,localizeMaterial);
+
+    if(localize){
+        localizeLabel.position.set(localize.position.x,localize.position.y,localize.position.z);
+    }else {
+        localizeLabel.position.set(1200, 800,400);
+    }
+
+    scene.add(localizeLabel);
 }
 
 function initCameraLookAtMash(){
@@ -254,15 +222,3 @@ function doRender(){
     renderer.render(scene, camera);
 }
 
-function threeStart(){
-    initRenderer();
-    initCamera();
-    initScene();
-    initLight();
-    initFrame();
-    initTrackBallControls();
-    initDatGUI();
-    initStats();
-    initCameraLookAtMash();
-    doRender();
-}
