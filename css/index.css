@@ -145,3 +145,44 @@ body{
     margin-bottom: 10px;
     display: inline-block;
 }
+
+.open-window {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#wall-control-window {
+    margin: 20px 0;
+}
+
+#wall-control-window label{
+    margin: 0;
+}
+
+#wall-control-window div{
+
+}
+
+#wall-control-window input{
+    width: 50px;
+    margin-bottom: 0;
+}
+
+.add-wall-window{
+}
+
+.position-input {
+    float: left;
+}
+
+#wall-control-window .position-input span{
+    padding: 5px;
+}
+
+#add-wall-btn{
+    margin: 10px 0;
+}
+
+.add-wall-window label{
+    padding: 10px 0;
+}

@@ -18,6 +18,7 @@
     <div id="controllerBorad" class="clearfix">
         <ul id="label-position-list"></ul>
     </div>
+    <!--左控制区-->
     <div class="button-list">
         <div id="reset-camera" class="btn">reset camera</div>
         <label>设置观测面</label>
@@ -29,59 +30,71 @@
         <div id="localizer-info">
             <label>定位器信息</label>
             <ul class="localizer-list">
-                <li>
-                    <div class="name">name</div>
-                    <span class="position">x: 1000.00</span>
-                    <span class="position">y: 1000.00</span>
-                    <span class="position">z: 1000.00</span>
-                </li>
-                <li>
-                    <div class="name">name</div>
-                    <span class="position">x: 1000.00</span>
-                    <span class="position">y: 1000.00</span>
-                    <span class="position">z: 1000.00</span>
-                </li>
-                <li>
-                    <div class="name">name</div>
-                    <span class="position">x: 1000.00</span>
-                    <span class="position">y: 1000.00</span>
-                    <span class="position">z: 1000.00</span>
-                </li>
-                <li>
-                    <div class="name">name</div>
-                    <span class="position">x: 1000.00</span>
-                    <span class="position">y: 1000.00</span>
-                    <span class="position">z: 1000.00</span>
-                </li>
-                <li>
-                    <div class="name">name</div>
-                    <span class="position">x: 1000.00</span>
-                    <span class="position">y: 1000.00</span>
-                    <span class="position">z: 1000.00</span>
-                </li>
             </ul>
-            <button class="btn" type="button" data-toggle="modal" data-target="#localizerModal">设置定位器</button>
         </div>
-
+        <div id="wall-control-window" class="clearfix">
+            <div class="open-window" id="open-wall-window">添加围墙</div>
+            <div class="add-wall-window clearfix">
+                <div class="wall-start-point">
+                    <label>Start Point:</label>
+                    <div class="clearfix">
+                        <div class="position-input">
+                            <span>x:</span>
+                            <input type="number" value="0" id="wall-start-x" name="wall-start-x">
+                        </div>
+                        <div class="position-input">
+                            <span>y:</span>
+                            <input type="number" value="0" id="wall-start-y" name="wall-start-y">
+                        </div>
+                        <div class="position-input">
+                            <span>height:</span>
+                            <input type="number" value="0" id="wall-start-height" name="wall-start-height">
+                        </div>
+                    </div>
+                </div>
+                <div class="wall-end-point">
+                    <label>End    Point:</label>
+                    <div class="clearfix">
+                        <div class="position-input">
+                            <span>x:</span>
+                            <input type="number" value="0" id="wall-end-x" name="wall-end-x">
+                        </div>
+                        <div class="position-input">
+                            <span>y:</span>
+                            <input type="number" value="0" id="wall-end-y" name="wall-end-y">
+                        </div>
+                        <div class="position-input">
+                            <span>height:</span>
+                            <input type="number" value="0" id="wall-end-height" name="wall-end-height">
+                        </div>
+                    </div>
+                </div>
+                <button id="add-wall-btn" class="btn" type="button">+</button>
+            </div>
+            <button class="btn" type="button" id="delete-wall-button">删除围墙</button>
+        </div>
     </div>
-    <!--添加定位器坐标-->
-    <div class="modal fade" id="localizerModal" tabindex="-1" role="dialog" aria-labelledby="localizerModalLabel">
+    <!--添加围墙-->
+    <!--<div class="modal fade" id="addWallModal" tabindex="-1" role="dialog" aria-labelledby="addWallModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="localizerModalLabel">添加定位器</h4>
+                    <h4 class="modal-title" id="addWallModalLabel">添加围墙</h4>
                 </div>
-                <div class="modal-body" id="localizer-list">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary">确定</button>
+                <div class="modal-body" id="wall-list">
+                    <ul>
+                        <li class="row">
+                            <div class="col-md-3"><span>x:</span><input type="number" placeholder="0" value="0"/></div>
+                            <div class="col-md-3"><span>y:</span><input type="number" placeholder="0" value="0"/></div>
+                            <div class="col-md-3"><span>z:</span><input type="number" placeholder="0" value="0"/></div>
+                        </li>
+                    </ul>
+                    <button class="btn">添加</button>
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
 <script>window.nodeRequire = require;
 delete window.require;
@@ -89,7 +102,7 @@ delete window.exports;
 delete window.module;</script>
 <script src="lib/jQuery/jQuery-2.2.0.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="https://cdn.bootcss.com/three.js/r83/three.min.js"></script>
+<script src="plugins/three.js"></script>
 <script src="https://cdn.bootcss.com/stats.js/r17/Stats.min.js"></script>
 <script src="https://cdn.bootcss.com/dat-gui/0.6.5/dat.gui.min.js"></script>
 <script src="plugins/TrackballControls.js"></script>

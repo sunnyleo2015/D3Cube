@@ -120,7 +120,7 @@ function addSphereLabel() {
 }
 
 function initLocalize(localize){
-    let localizeGeometry = new THREE.CubeGeometry(10,10,10);
+    let localizeGeometry = new THREE.BoxGeometry(10,10,10);
     let localizeMaterial = new THREE.MeshLambertMaterial({color: 0xff9600});
 
     let localizeLabel = new THREE.Mesh(localizeGeometry,localizeMaterial);
