@@ -131,6 +131,7 @@ body{
     overflow: scroll;
     border: 1px solid;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .localizer-list .name {
@@ -151,24 +152,31 @@ body{
     cursor: pointer;
 }
 
-#wall-control-window {
-    margin: 20px 0;
+.add-wall-window{
+
 }
 
-#wall-control-window label{
+.add-wall-window label {
+    font-weight: bold;
     margin: 0;
 }
 
-#wall-control-window div{
-
+.add-wall-window input{
+    width: 70px;
+    margin: 0 10px;
 }
 
-#wall-control-window input{
-    width: 50px;
-    margin-bottom: 0;
+.add-wall-window >div {
+    width: 400px;
+    margin: auto;
 }
 
-.add-wall-window{
+.add-wall-window label{
+    padding: 10px 0;
+}
+
+#wall-control-window {
+    margin: 20px 0;
 }
 
 .position-input {
@@ -179,10 +187,10 @@ body{
     padding: 5px;
 }
 
-#add-wall-btn{
-    margin: 10px 0;
+.wall-list input[type=checkbox]{
+    margin: 15px 15px 0;
 }
 
-.add-wall-window label{
-    padding: 10px 0;
+.wall-list span{
+    margin: 0 10px;
 }

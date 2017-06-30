@@ -25,7 +25,6 @@ let resetCameraXZArea = function () {
 let wallList = [];
 
 let addNewWall = function(x1,y1,z1,x2,y2,z2){
-
     let vertices = [
       new THREE.Vector3(x1,y1,0),
       new THREE.Vector3(x1,y1,z1>0?z1:1500),
