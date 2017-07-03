@@ -164,6 +164,8 @@ body{
 .add-wall-window input{
     width: 70px;
     margin: 0 10px;
+    border: 1px solid #f0f0f0;
+    padding: 2px 8px;
 }
 
 .add-wall-window >div {

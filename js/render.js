@@ -199,19 +199,20 @@ function doRender(){
     if(!controls.stopRender){
         $('#label-position-list').html('');
         $.each(labelList,(index)=>{
-            labelList[index].position.set(Math.round(Math.random() * 500),Math.round(Math.random() * 300),Math.round(Math.random() * 600));
+            const label=labelList[index]; 
+            label.position.set(Math.round(Math.random() * 500),Math.round(Math.random() * 300),Math.round(Math.random() * 600));
 
             $('#label-position-list').append(
-                `<li class=" ${labelList[index].name}">
-                    <span class="name">${labelList[index].name}</span>
-                    <span class="position">x: ${labelList[index].position.x}</span>
-                    <span class="position">y: ${labelList[index].position.y}</span>
-                    <span class="position">z: ${labelList[index].position.z}</span>
+                `<li class=" ${label.name}">
+                    <span class="name">${label.name}</span>
+                    <span class="position">x: ${label.position.x}</span>
+                    <span class="position">y: ${label.position.y}</span>
+                    <span class="position">z: ${label.position.z}</span>
                 </li>`
             );
 
-            $(`.${labelList[index].name}`).on('click',()=>{
-                trackBallControls.target.set(labelList[index].position.x,labelList[index].position.y,labelList[index].position.z)
+            $(`.${label.name}`).on('click',()=>{
+                trackBallControls.target.set(label.position.x,label.position.y,label.position.z)
             })
         });
     }

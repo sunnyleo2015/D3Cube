@@ -41,3 +41,15 @@ $('#add-wall-btn').on('click', ()=>{
     let z2 = $('#wall-end-height').val();
     addNewWall(x1,y1,z1,x2,y2,z2);
 });
+
+$('#open-wall-list').on('click',()=>{
+   initWallList();
+});
+
+$('#delete-choose-wall').on('click',function () {
+    deleteChooseWalls();
+});
+
+$('#delete-all-wall').on('click',function(){
+    deleteAllWalls();
+});

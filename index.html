@@ -9,134 +9,124 @@
     <title>3dCube</title>
 </head>
 <body>
-    <!--模型展示区域-->
-    <div id="WebGL"></div>
+<!--模型展示区域-->
+<div id="WebGL"></div>
 
-    <!--状态展示-->
-    <div id="Stats-output"></div>
+<!--状态展示-->
+<div id="Stats-output"></div>
 
-    <!--控制区-->
-    <div id="controllerBorad" class="clearfix">
-        <ul id="label-position-list"></ul>
+<!--控制区-->
+<div id="controllerBorad" class="clearfix">
+    <ul id="label-position-list"></ul>
+</div>
+<!--左控制区-->
+<div class="button-list">
+    <div id="reset-camera" class="btn">reset camera</div>
+    <label>设置观测面</label>
+    <div class="row">
+        <div id="camera-xy" class="btn btn-default col-md-3">xy面</div>
+        <div id="camera-yz" class="btn btn-default col-md-3">yz面</div>
+        <div id="camera-xz" class="btn btn-default col-md-3">xz面</div>
     </div>
-    <!--左控制区-->
-    <div class="button-list">
-        <div id="reset-camera" class="btn">reset camera</div>
-        <label>设置观测面</label>
-        <div class="row">
-            <div id="camera-xy" class="btn btn-default col-md-3">xy面</div>
-            <div id="camera-yz" class="btn btn-default col-md-3">yz面</div>
-            <div id="camera-xz" class="btn btn-default col-md-3">xz面</div>
-        </div>
-        <div id="localizer-info text-center">
-            <label>定位器信息</label>
-            <ul class="localizer-list">
-            </ul>
-        </div>
-        <div id="wall-control-window" class="clearfix">
-            <button type="button"  class="btn btn-default" id="open-wall-add" data-toggle="modal" data-target="#addWallModal">添加围墙</button>
-            <button type="button"  class="btn btn-default" id="open-wall-list" data-toggle="modal" data-target="#deleteWallModal">围墙列表</button>
-
-            <ul class="wall-list">
-                <li>
-                    <div>
-                        <span>(1000.00, 1000.00)</span>
-                        to
-                        <span>(1000.00, 1000.00)</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
+    <div id="localizer-info text-center">
+        <label>定位器信息</label>
+        <ul class="localizer-list">
+        </ul>
     </div>
-    <!--添加围墙弹窗-->
-    <div class="modal fade in" id="addWallModal" tabindex="-1" role="dialog" aria-labelledby="addWallModalLabel" data-backdrop="false">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="addWallModalLabel">添加围墙</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="add-wall-window clearfix">
-                        <div class="wall-start-point">
-                            <label>Start Point:</label>
-                            <div class="clearfix">
-                                <div class="position-input">
-                                    <span>x:</span>
-                                    <input type="number" value="0" id="wall-start-x" name="wall-start-x">
-                                </div>
-                                <div class="position-input">
-                                    <span>y:</span>
-                                    <input type="number" value="0" id="wall-start-y" name="wall-start-y">
-                                </div>
-                                <div class="position-input">
-                                    <span>height:</span>
-                                    <input type="number" value="0" id="wall-start-height" name="wall-start-height">
-                                </div>
+    <div id="wall-control-window" class="clearfix">
+        <button type="button"  class="btn btn-default" id="open-wall-add" data-toggle="modal" data-target="#addWallModal">添加围墙</button>
+        <button type="button"  class="btn btn-default" id="open-wall-list" data-toggle="modal" data-target="#deleteWallModal">围墙列表</button>
+    </div>
+</div>
+<!--添加围墙弹窗-->
+<div class="modal fade in" id="addWallModal" tabindex="-1" role="dialog" aria-labelledby="addWallModalLabel" data-backdrop="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="addWallModalLabel">添加围墙</h4>
+            </div>
+            <div class="modal-body">
+                <div class="add-wall-window clearfix">
+                    <div class="wall-start-point">
+                        <label>Start Point:</label>
+                        <div class="clearfix">
+                            <div class="position-input">
+                                <span>x:</span>
+                                <input type="number" value="0" id="wall-start-x" name="wall-start-x">
+                            </div>
+                            <div class="position-input">
+                                <span>y:</span>
+                                <input type="number" value="0" id="wall-start-y" name="wall-start-y">
+                            </div>
+                            <div class="position-input">
+                                <span>height:</span>
+                                <input type="number" value="0" id="wall-start-height" name="wall-start-height">
                             </div>
                         </div>
-                        <div class="wall-end-point">
-                            <label>End    Point:</label>
-                            <div class="clearfix">
-                                <div class="position-input">
-                                    <span>x:</span>
-                                    <input type="number" value="0" id="wall-end-x" name="wall-end-x">
-                                </div>
-                                <div class="position-input">
-                                    <span>y:</span>
-                                    <input type="number" value="0" id="wall-end-y" name="wall-end-y">
-                                </div>
-                                <div class="position-input">
-                                    <span>height:</span>
-                                    <input type="number" value="0" id="wall-end-height" name="wall-end-height">
-                                </div>
+                    </div>
+                    <div class="wall-end-point">
+                        <label>End    Point:</label>
+                        <div class="clearfix">
+                            <div class="position-input">
+                                <span>x:</span>
+                                <input type="number" value="0" id="wall-end-x" name="wall-end-x">
+                            </div>
+                            <div class="position-input">
+                                <span>y:</span>
+                                <input type="number" value="0" id="wall-end-y" name="wall-end-y">
+                            </div>
+                            <div class="position-input">
+                                <span>height:</span>
+                                <input type="number" value="0" id="wall-end-height" name="wall-end-height">
                             </div>
                         </div>
-
                     </div>
+
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button id="add-wall-btn" class="btn btn-primary" type="button">add wall</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="add-wall-btn" class="btn btn-primary" type="button">add wall</button>
             </div>
         </div>
     </div>
+</div>
 
-    <!--添加围墙弹窗-->
-    <div class="modal fade in" id="deleteWallModal" tabindex="-1" role="dialog" aria-labelledby="deleteWallModalLabel" data-backdrop="false">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="deleteWallModalLabel">围墙列表</h4>
-                </div>
-                <div class="modal-body text-center">
-                    <ul class="wall-list">
-                       <li>
-                           <div><input type="checkbox" name="deleteWallLists" value="1">name:<span>wall-1231213212</span><button class="btn btn-sm btn-default">Delete</button></div>
-                       </li>
-                        <li>
-                            <div><input type="checkbox" name="deleteWallLists" value="2">name:<span>wall-1231213212</span><button class="btn btn-sm btn-default">Delete</button></div>
-                        </li>
-                        <li>
-                            <div><input type="checkbox" name="deleteWallLists" value="3">name:<span>wall-1231213212</span><button class="btn btn-sm btn-default">Delete</button></div>
-                        </li>
-                        <li>
-                            <div><input type="checkbox" name="deleteWallLists" value="4">name:<span>wall-1231213212</span><button class="btn btn-sm btn-default">Delete</button></div>
-                        </li>
-                        <li>
-                            <div><input type="checkbox" name="deleteWallLists" value="5">name:<span>wall-1231213212</span><button class="btn btn-sm btn-default">Delete</button></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="text-center modal-footer">
-                    <button id="delete-choose-wall" class="btn btn btn-default" type="button">Delete Choose</button>
-                    <button id="delete-all-wall" class="btn btn btn-default" type="button">Delete All</button>
-                </div>
+<!--添加围墙弹窗-->
+<div class="modal fade in" id="deleteWallModal" tabindex="-1" role="dialog" aria-labelledby="deleteWallModalLabel" data-backdrop="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="deleteWallModalLabel">围墙列表</h4>
+            </div>
+            <div class="modal-body text-center">
+                <ul id="wall-list" class="wall-list">
+                    <li>
+                        <div><input type="checkbox" name="deleteWallLists" value="1">name:<span>wall-1231213212</span><button class="btn btn-sm btn-default">Delete</button></div>
+                    </li>
+                    <li>
+                        <div><input type="checkbox" name="deleteWallLists" value="2">name:<span>wall-1231213212</span><button class="btn btn-sm btn-default">Delete</button></div>
+                    </li>
+                    <li>
+                        <div><input type="checkbox" name="deleteWallLists" value="3">name:<span>wall-1231213212</span><button class="btn btn-sm btn-default">Delete</button></div>
+                    </li>
+                    <li>
+                        <div><input type="checkbox" name="deleteWallLists" value="4">name:<span>wall-1231213212</span><button class="btn btn-sm btn-default">Delete</button></div>
+                    </li>
+                    <li>
+                        <div><input type="checkbox" name="deleteWallLists" value="5">name:<span>wall-1231213212</span><button class="btn btn-sm btn-default">Delete</button></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-center modal-footer">
+                <button id="delete-choose-wall" class="btn btn btn-default" type="button">Delete Choose</button>
+                <button id="delete-all-wall" class="btn btn btn-default" type="button">Delete All</button>
             </div>
         </div>
     </div>
+</div>
 
 <script>window.nodeRequire = require;
 delete window.require;
@@ -144,15 +134,17 @@ delete window.exports;
 delete window.module;</script>
 <script src="lib/jQuery/jQuery-2.2.0.min.js"></script>
 <script src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<script src="plugins/three.js"></script>
+<script src="lib/lodash.js"></script>
+<script src="lib/three.js"></script>
 <script src="https://cdn.bootcss.com/stats.js/r17/Stats.min.js"></script>
 <script src="https://cdn.bootcss.com/dat-gui/0.6.5/dat.gui.min.js"></script>
 <script src="plugins/TrackballControls.js"></script>
 <script src="plugins/dat.gui.js"></script>
 <script src="plugins/stats.js"></script>
 <script src="js/render.js"></script>
-<script src="js/conrtrolBox.js"></script>
 <script src="js/localizer.js"></script>
+<script src="js/wall.js"></script>
+<script src="js/conrtrolBox.js"></script>
 <script src="js/dragmodal"></script>
 <script src="js/index.js"></script>
 </body>
